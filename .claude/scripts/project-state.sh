@@ -2,7 +2,8 @@
 # project-state.sh — prints `key: value` rows describing what exists on disk.
 # Observations only; the calling skill decides what they mean.
 cd "${CLAUDE_PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}" 2>/dev/null || true
-g() { bash .claude/scripts/yaml-get.sh "$1"; }
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+g() { bash "$HERE/yaml-get.sh" "$1"; }
 count() { find "$@" -type f 2>/dev/null | grep -v '/\.gitkeep$' | wc -l | tr -d ' '; }
 exists() { [ -e "$1" ] && echo yes || echo no; }
 
