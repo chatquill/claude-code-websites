@@ -55,7 +55,7 @@ you chose yourself.
 
 ### Skills You Drive
 
-`/api-contract`, `/data-model`, `/db-migration`, `/code-review`, `/team-backend`
+`/api-contract`, `/data-model`, `/db-migration`, `/review-code`, `/team-backend`
 
 ### What This Agent Must NOT Do
 

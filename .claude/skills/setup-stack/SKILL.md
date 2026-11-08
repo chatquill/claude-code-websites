@@ -81,6 +81,16 @@ After scaffolding: make sure `.env.example` exists (placeholder values only)
 and that the framework's own `.gitignore` entries are merged rather than
 overwriting the studio `.gitignore` (show the diff and ask).
 
+If the scaffolder wrote agent instructions (current `create-next-app` writes
+`AGENTS.md` pointing at version-matched docs in `node_modules/next/dist/docs/`),
+keep the file and ask to add `@AGENTS.md` to `CLAUDE.md` so every session loads
+it. Never delete or rewrite it: the framework re-creates it.
+
+If `npm install` fails with `ERESOLVE` (peer-dependency conflict), show the
+conflicting packages and offer the fix the stack matrix lists; do not pass
+`--force` or `--legacy-peer-deps` silently, because skipped peers (e.g. `vite`
+for Vitest) break the tool later.
+
 ## Output
 
 `project.yaml` stack keys, `specialists`, `paths.code_root`;

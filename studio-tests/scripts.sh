@@ -51,6 +51,14 @@ for k in "frontend: nuxt" "orm: drizzle" "database: postgres" "package_manager: 
 done
 # test-run with no runner
 eq "$(bash $S/test-run.sh | sed -n 's/^result: //p')" "no-runner" "test-run without tests"
+# test-run: missing runner is not a test failure
+echo '{"scripts":{"test":"definitely-not-installed-runner run"}}' > package.json
+eq "$(bash $S/test-run.sh | sed -n 's/^result: //p')" "runner-missing" "test-run missing runner"
+echo '{"scripts":{"test":"node -e \"process.exit(1)\""}}' > package.json
+eq "$(bash $S/test-run.sh | sed -n 's/^result: //p')" "fail" "test-run failing tests"
+echo '{"scripts":{"test":"node -e \"process.exit(0)\""}}' > package.json
+eq "$(bash $S/test-run.sh | sed -n 's/^result: //p')" "pass" "test-run passing tests"
+rm package.json
 # statusline
 out="$(printf '{"model":{"display_name":"M"},"workspace":{"project_dir":"%s"}}' "$T" | bash .claude/statusline.sh)"
 eq "$out" "M | build | nextjs" "statusline"

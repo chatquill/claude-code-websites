@@ -118,7 +118,7 @@ canonical list; `studio-tests` checks it against `.claude/agents/`.
 
 **Build (26)**
 `/create-epics` `/create-stories` `/story-readiness` `/dev-story` `/story-done` `/tdd`
-`/prototype` `/vertical-slice` `/code-review` `/refactor` `/tech-debt` `/db-migration`
+`/prototype` `/vertical-slice` `/review-code` `/refactor` `/tech-debt` `/db-migration`
 `/add-auth` `/add-payments` `/add-cms` `/add-ai-feature` `/add-realtime` `/add-i18n`
 `/sprint-plan` `/sprint-status` `/test-setup` `/regression-suite` `/test-flakiness`
 `/e2e` `/consistency-check` `/team-feature`
@@ -225,7 +225,7 @@ Installed on demand by `/install-deps` (or manually). The studio's own agents
 | `anthropics/skills` | `mcp-builder` | `ai-features-engineer` |
 | `anthropics/skills` | `claude-api` | `ai-features-engineer`, `/add-ai-feature` |
 | `vercel-labs/agent-skills` | `web-design-guidelines` | `ux-lead`, `/ux-review`, `/a11y-audit` |
-| `vercel-labs/agent-skills` | `react-best-practices` | React-family specialists, `/code-review` |
+| `vercel-labs/agent-skills` | `react-best-practices` | React-family specialists, `/review-code` |
 | `vercel-labs/agent-skills` | `composition-patterns` | `lead-frontend`, `ui-engineer` |
 | `vercel-labs/agent-skills` | `react-native-skills` | `mobile-specialist` |
 | `vercel-labs/agent-skills` | `deploy-to-vercel` | `hosting-platform-specialist` |

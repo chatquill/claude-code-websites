@@ -4,6 +4,16 @@ All notable changes to Claude Code Web Studios. Format: [Keep a Changelog](https
 
 ## [0.1.0] - 2026-11-08
 
+### Changed (after a dry run on a fresh create-next-app project, and running the hooks live)
+- `/code-review` renamed to `/review-code` to avoid clashing with Claude Code's built-in skill
+- `test-run.sh` distinguishes `runner-missing` and `runner-error` (broken test setup) from failing tests; the push gate advises on a missing runner and blocks a broken one only under `full`
+- `validate-push.sh` checks the pushed refspec, not just the current branch, before warning about `main`
+- Commit-message check reads only the text after the commit command and handles multi-line `-m` and `-F -` heredocs (it misread compound commands before)
+- Hooks ignore files outside the project
+- `dependency-audit.sh` stays quiet when the manifest is unchanged
+- Stack specialists, `/setup-stack` and `/adopt` honour framework-shipped agent docs (`AGENTS.md`, `node_modules/next/dist/docs/`) and existing agent instruction files
+- Stack matrix documents npm `ERESOLVE` / skipped-peer pitfalls
+
 ### Added
 - 55 agents: 4 directors, 10 leads, 22 core specialists, 19 stack specialists, with tier-specific collaboration protocols, gates, escalation and delegation maps
 - 97 skills covering onboarding, Discovery, Design, Build, audits, Launch, Grow, bugs and team orchestrations

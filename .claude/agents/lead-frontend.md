@@ -56,7 +56,7 @@ you chose yourself.
 
 ### Skills You Drive
 
-`/code-review`, `/refactor`, `/team-frontend`
+`/review-code`, `/refactor`, `/team-frontend`
 
 ### External Skills (if installed)
 

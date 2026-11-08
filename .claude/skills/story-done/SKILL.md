@@ -16,7 +16,7 @@ Runs the `QA-STORY` gate with `qa-lead` and, on `PASS`, sets the story to
 
 - The story file (must be `review`; `in-progress` → suggest `/dev-story` first)
 - The test files named under `## Tests`
-- The latest `/code-review` notes, if any
+- The latest `/review-code` notes, if any
 - The spec sections the story implements
 - `modes.rigor`
 

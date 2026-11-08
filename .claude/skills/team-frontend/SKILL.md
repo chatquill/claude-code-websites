@@ -69,4 +69,4 @@ agent was BLOCKED, say which and why; still report the rest. Update story
 
 ## Next step
 
-`/code-review` on the branch, then `/story-done` per story.
+`/review-code` on the branch, then `/story-done` per story.

@@ -59,6 +59,10 @@ Use these when available (see `docs/RECOMMENDED-SKILLS.md`); when one is missing
 
 Your training data may predate the version this project uses.
 
+- If the framework ships docs for agents, read them first: an `AGENTS.md`
+  written by the scaffold (current `create-next-app` does this) and versioned
+  guides inside the package (e.g. `node_modules/next/dist/docs/`). They describe
+  the installed version and outrank your memory.
 - Read the installed version from the manifest/lockfile (`package.json`,
   `pyproject.toml`, `go.mod`, `composer.json`, `Gemfile.lock`) before advising.
 - For an API, flag or convention you are not certain exists in that version,

@@ -72,4 +72,4 @@ updating story statuses.
 
 ## Next step
 
-`/code-review`, then `/story-done`; `/team-frontend` if the UI consumes these endpoints.
+`/review-code`, then `/story-done`; `/team-frontend` if the UI consumes these endpoints.

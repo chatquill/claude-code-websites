@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: review-code
 description: "Reviews a diff, branch or path against the project's rules, specs, API contract, security checklist and budgets, using the frontend, backend and security leads in parallel. Reports findings with file:line and severity; read-only unless --fix is approved. Use before /story-done, before merging, or when the user asks for a review."
 argument-hint: "[branch | path | 'staged'] [--fix]"
 user-invocable: true

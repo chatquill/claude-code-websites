@@ -31,7 +31,7 @@ claude mcp add playwright -- npx @playwright/mcp@latest
 | `mcp-builder` | anthropics/skills | `ai-features-engineer` |
 | `claude-api` | anthropics/skills | `ai-features-engineer`, `/add-ai-feature` |
 | `web-design-guidelines` | vercel-labs/agent-skills | `ux-lead`, `/ux-review`, `/a11y-audit` |
-| `react-best-practices` | vercel-labs/agent-skills | React-family specialists, `/code-review` |
+| `react-best-practices` | vercel-labs/agent-skills | React-family specialists, `/review-code` |
 | `composition-patterns` | vercel-labs/agent-skills | `lead-frontend`, `ui-engineer` |
 | `react-native-skills` | vercel-labs/agent-skills | `mobile-specialist` |
 | `deploy-to-vercel` | vercel-labs/agent-skills | `hosting-platform-specialist` |

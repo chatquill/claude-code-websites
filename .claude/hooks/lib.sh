@@ -38,7 +38,12 @@ fi
 hook_file() {
   local f; f="$(json_get .tool_input.file_path)"
   [ -z "$f" ] && return
-  f="${f//\\//}"; printf '%s' "${f#"$HOOK_ROOT"/}"
+  f="${f//\\//}"
+  case "$f" in
+    "$HOOK_ROOT"/*) f="${f#"$HOOK_ROOT"/}" ;;
+    /*|[A-Za-z]:/*) return ;;   # outside the project: not ours to check
+  esac
+  printf '%s' "$f"
 }
 
 # Text a Write/Edit is putting into the file

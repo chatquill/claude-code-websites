@@ -96,7 +96,7 @@ stages. Full guide: [`docs/WORKFLOW-GUIDE.md`](docs/WORKFLOW-GUIDE.md).
 | **Start** | `/start` · `/help` · `/adopt` (existing site) · `/setup-stack` · `/settings` · `/install-deps` |
 | **Discovery** | `/brainstorm` · `/market-research` · `/competitor-audit` · `/personas` · `/write-prd` · `/scope-check` · `/estimate` · `/tech-spike` |
 | **Design** | `/brand-identity` · `/design-system` · `/design-tokens` · `/sitemap` · `/ux-flow` · `/wireframe` · `/ux-review` · `/feature-spec` · `/api-contract` · `/data-model` · `/create-architecture` · `/architecture-decision` · `/architecture-review` · `/content-strategy` · `/design-review` |
-| **Build** | `/create-epics` · `/create-stories` · `/sprint-plan` · `/dev-story` · `/tdd` · `/code-review` · `/story-done` · `/team-feature` · `/add-auth` · `/add-payments` · `/add-cms` · `/add-ai-feature` · `/add-realtime` · `/add-i18n` · `/db-migration` · `/test-setup` · `/e2e` |
+| **Build** | `/create-epics` · `/create-stories` · `/sprint-plan` · `/dev-story` · `/tdd` · `/review-code` · `/story-done` · `/team-feature` · `/add-auth` · `/add-payments` · `/add-cms` · `/add-ai-feature` · `/add-realtime` · `/add-i18n` · `/db-migration` · `/test-setup` · `/e2e` |
 | **Audits** | `/perf-audit` · `/a11y-audit` · `/security-audit` · `/dependency-audit` · `/seo-audit` · `/privacy-audit` |
 | **Launch** | `/ci-setup` · `/deploy-setup` · `/team-launch` · `/launch-checklist` · `/release-checklist` · `/smoke-check` · `/load-test` · `/changelog` · `/release-notes` |
 | **Grow** | `/analytics-plan` · `/experiment` · `/funnel-review` · `/cro-review` · `/email-flows` · `/observability-setup` · `/incident` · `/hotfix` · `/postmortem` · `/retrospective` · `/content-calendar` |

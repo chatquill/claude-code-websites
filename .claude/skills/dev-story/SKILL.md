@@ -74,8 +74,8 @@ checkpoint's `## Done this session` and `## Next`.
 
 - `minimal`: tests strongly recommended; a story may go to review with "tests: TBD" if the user says so.
 - `standard`: every AC needs a passing test; lint and typecheck must pass.
-- `full`: plus `/code-review` must run before `review`, and the a11y/perf hooks must be clean.
+- `full`: plus `/review-code` must run before `review`, and the a11y/perf hooks must be clean.
 
 ## Next step
 
-`/code-review`, then `/story-done S-NNN`.
+`/review-code`, then `/story-done S-NNN`.

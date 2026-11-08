@@ -59,4 +59,4 @@ tech-debt item, mark it resolved in `production/tech-debt.md` (ask first).
 
 ## Next step
 
-`/code-review` on the refactor diff.
+`/review-code` on the refactor diff.

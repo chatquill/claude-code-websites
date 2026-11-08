@@ -22,11 +22,14 @@ while IFS= read -r p; do
   [ "$s" -gt 5242880 ] && report PreToolUse "'$p' is $((s / 1048576)) MB. Large binaries belong in object storage or Git LFS."
 done <<< "$staged"
 
-# 4. Conventional commit message (only checkable when given with -m).
-msg="$(printf '%s' "$cmd" | sed -nE "s/.*-m[[:space:]]*\"([^\"]*)\".*/\1/p; s/.*-m[[:space:]]*'([^']*)'.*/\1/p" | head -1)"
-if [ -z "$msg" ]; then
-  # heredoc form: git commit -F - <<'EOF' … first non-empty line after the heredoc marker
-  msg="$(printf '%s\n' "$cmd" | awk 'f && NF {print; exit} /<</ {f=1}')"
+# 4. Conventional commit message. Only the text after `git commit` counts, so a
+#    compound command (heredocs, scripts before the commit) is not misread.
+commit_part="$(printf '%s' "$cmd" | awk 'f {print; next} /git([[:space:]]+-[^[:space:]]+)*[[:space:]]+commit/ {sub(/.*git([[:space:]]+-[^[:space:]]+)*[[:space:]]+commit/, ""); f=1; print}')"
+msg=""
+if command -v python3 >/dev/null 2>&1; then
+  msg="$(printf '%s' "$commit_part" | python3 "$HOOK_LIB_DIR/commit-msg.py" 2>/dev/null)"
+else
+  msg="$(printf '%s' "$commit_part" | sed -nE "s/.*-m[[:space:]]*[\"']([^\"']*).*/\1/p" | head -1)"
 fi
 if [ -n "$msg" ] && ! printf '%s' "$msg" | head -1 | grep -qE '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9._/-]+\))?!?: .+'; then
   m="commit message should follow Conventional Commits, e.g. 'feat(auth): add magic-link sign-in'. Got: '$(printf '%s' "$msg" | head -1 | cut -c1-72)'"

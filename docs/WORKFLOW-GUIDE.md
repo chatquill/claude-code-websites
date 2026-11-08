@@ -32,7 +32,7 @@
 | Plan | `/sprint-plan`, `/sprint-status` |
 | Implement | `/dev-story` (runs `/tdd` inside), `/team-feature` for full-stack slices |
 | Integrations | `/add-auth`, `/add-payments`, `/add-cms`, `/add-ai-feature`, `/add-realtime`, `/add-i18n`, `/db-migration` |
-| Review & close | `/code-review`, `/story-done` |
+| Review & close | `/review-code`, `/story-done` |
 | Keep healthy | `/tech-debt`, `/refactor`, `/regression-suite`, `/consistency-check` |
 | **Gate** | `/gate-check build` |
 

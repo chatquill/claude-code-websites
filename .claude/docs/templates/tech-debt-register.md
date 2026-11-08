@@ -21,4 +21,4 @@ Updated: [YYYY-MM-DD]
 - `TODO` / `FIXME` / `HACK` markers in the code root
 - Skipped or quarantined tests
 - Outdated major dependencies (`/dependency-audit`)
-- Review findings left open in `/code-review`
+- Review findings left open in `/review-code`

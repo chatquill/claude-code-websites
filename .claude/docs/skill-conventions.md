@@ -112,7 +112,7 @@ Keep skills under ~150 lines. Point to templates and docs instead of inlining th
 |---|---|
 | Stage gates (`/gate-check`, `.claude/docs/gates.md`) | `PASS`, `CONCERNS`, `FAIL` |
 | Director/lead gates (`PD-PRD`, `TD-ARCH`, `DD-REVIEW`, `SEC-REVIEW`…) | `APPROVE`, `CONCERNS`, `REJECT` |
-| `/code-review` | `APPROVE`, `APPROVE WITH CHANGES`, `CHANGES REQUESTED` |
+| `/review-code` | `APPROVE`, `APPROVE WITH CHANGES`, `CHANGES REQUESTED` |
 | QA (`QA-STORY`, `QA-RELEASE`) and go/no-go | `PASS`, `FAIL` (go/no-go: `GO`, `NO-GO`) |
 
 Any gate may also return `NOT ASSESSED` naming the input it could not read.

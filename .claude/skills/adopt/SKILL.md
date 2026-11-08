@@ -46,6 +46,7 @@ Build a short inventory:
 | Tests | runner config, test file count, e2e folder |
 | CI / deploy | workflow files, host config |
 | Docs | README, `docs/`, ADRs, any PRD-like text |
+| Agent instructions | existing `CLAUDE.md`, `AGENTS.md`, `.cursorrules`, `.github/copilot-instructions.md`: keep them; propose merging their rules into `CLAUDE.md` or importing them (`@AGENTS.md`), never overwrite |
 
 ### Phase 3: Propose project.yaml
 

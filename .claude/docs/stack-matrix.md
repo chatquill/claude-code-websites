@@ -95,3 +95,14 @@ Local databases run in Docker Compose (`compose.yaml`) for dev and tests.
 | `ecommerce` | nextjs | native | postgres + drizzle | better-auth | stripe | sanity | vercel |
 | `api` | none | hono (TS) or fastapi (Python) | postgres + drizzle / sqlalchemy | custom (API keys/JWT) | none | none | fly or railway |
 | `mixed` | nextjs | native | postgres + drizzle | better-auth | stripe | payload | vercel |
+
+## Known install pitfalls
+
+- **npm `ERESOLVE` on fresh scaffolds** (peer ranges lag new React/Next majors):
+  prefer `pnpm`, or install the missing peer explicitly. `--legacy-peer-deps`
+  skips peers: with Vitest it leaves out `vite`, and the runner then fails at
+  startup (`test-run.sh` reports `runner-error`). After such an install run
+  `npm i -D vite`.
+- **Framework agent docs**: `create-next-app` writes `AGENTS.md` and ships
+  version-matched docs in `node_modules/next/dist/docs/`. Keep the file and
+  import it from `CLAUDE.md` (`@AGENTS.md`).

@@ -58,7 +58,7 @@ typecheck. Fix until green.
 
 ### Phase 5: Review
 
-Run `/code-review` on the feature diff (frontend, backend, security in parallel).
+Run `/review-code` on the feature diff (frontend, backend, security in parallel).
 Resolve blockers and majors.
 
 ### Phase 6: Close
