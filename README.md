@@ -16,8 +16,8 @@
 
 ---
 
-> **Status: under construction (Phase 1 of 7).** The foundation, config system,
-> status line, `/start` and `/help` are in place. Agents, the remaining skills,
+> **Status: under construction (Phase 2 of 7).** The foundation, config system,
+> status line, `/start`, `/help` and all 55 agents are in place. The remaining skills,
 > hooks, rules and templates land in the following phases. See
 > [`docs/BLUEPRINT.md`](docs/BLUEPRINT.md) for the full plan and progress.
 

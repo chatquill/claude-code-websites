@@ -239,7 +239,7 @@ to its own checklist and says the dependency was not found.
 | Phase | Contents | Status |
 |---|---|---|
 | 1 | Foundation: blueprint, `CLAUDE.md`, README, LICENSE, `project.yaml`, core docs, settings, status line, `session-start` hook, `/start`, `/help`, plugin manifest | ✅ |
-| 2 | All 50 agents + `agent-roster.md` | ⏳ |
+| 2 | All 55 agents + `agent-roster.md` | ✅ |
 | 3 | Skills: onboarding, discovery, design | ⏳ |
 | 4 | Skills: build, audits, launch, grow, teams | ⏳ |
 | 5 | Hooks + helper scripts | ⏳ |
