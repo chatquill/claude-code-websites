@@ -1,0 +1,10 @@
+{
+  "name": "web-studios",
+  "version": "0.1.0",
+  "description": "Turn Claude Code into a full web development studio: 55 agents, lifecycle skills (Discovery → Design → Build → Launch → Grow), quality hooks and path-scoped rules for frontend + backend projects.",
+  "author": { "name": "Claude Code Web Studios contributors" },
+  "license": "MIT",
+  "keywords": ["web", "frontend", "backend", "saas", "nextjs", "agents", "tdd", "design-system"],
+  "agents": "./.claude/agents/",
+  "skills": "./.claude/skills/"
+}
