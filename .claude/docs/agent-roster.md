@@ -94,6 +94,28 @@ stack` selects their technology (`/setup-stack` records them in `specialists:`).
 | `hosting-platform-specialist` | sonnet | Vercel, Netlify, Cloudflare, Fly, Railway, Render | `devops-lead` |
 | `cloud-infra-specialist` | sonnet | AWS, GCP, Azure and infrastructure as code | `devops-lead` |
 
+## Role aliases
+
+Roles you may expect in an agency that are covered by an existing agent:
+
+| Role | Covered by |
+|---|---|
+| Project manager / scrum master / delivery lead | `producer` |
+| Business analyst / product owner | `product-manager` (vision and final scope: `product-director`) |
+| CTO / solutions architect / software architect | `technical-director` |
+| Creative director / art director / brand designer | `design-director` |
+| UX designer / information architect / interaction designer | `ux-lead` |
+| Visual designer / motion designer | `ui-designer` |
+| DBA / data architect | `data-engineer` (+ `postgres-specialist` / `mongodb-specialist`) |
+| SRE / platform engineer | `devops-lead` + `observability-engineer` |
+| Frontend developer | `ui-engineer` + the frontend stack specialist |
+| Backend developer | `api-engineer` + the backend stack specialist |
+| Full-stack developer | `/team-feature` (frontend + backend specialists on one contract) |
+| QA engineer / SDET | `test-engineer` |
+| Marketing / growth marketer | `growth-lead` |
+| Content writer / editor / UX writer | `copywriter`, `content-lead` |
+| Legal / compliance (drafts only) | `privacy-compliance-specialist` |
+
 ## Escalation
 
 | Conflict | Goes to |

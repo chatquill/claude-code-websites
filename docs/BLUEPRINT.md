@@ -161,6 +161,8 @@ Total: **97** skills.
 | `dependency-audit.sh` | PostToolUse(Write/Edit) | Run `npm audit`/`pip-audit` when a manifest changes |
 | `validate-skill-change.sh` | PostToolUse(Write/Edit) | Remind to run `/skill-test` after editing a skill |
 | `log-agent.sh` / `log-agent-stop.sh` | SubagentStart/Stop | Agent audit trail |
+
+Shared helpers live in `hooks/lib.sh`. Behaviour is covered by `studio-tests/hooks.sh`.
 | `pre-compact.sh` | PreCompact | Flush state to `active.md` |
 | `session-stop.sh` | Stop | Session log + summary |
 | `notify.sh` | Notification | Desktop notification |
@@ -205,7 +207,7 @@ Quality: `test-plan`, `a11y-report`, `perf-report`, `security-review`, `seo-audi
 Launch: `launch-checklist`, `release-checklist`, `release-notes`, `runbook`, `changelog`
 Grow: `analytics-tracking-plan`, `experiment-brief`, `funnel-review`, `email-flow`, `incident-report`, `postmortem`, `content-calendar`
 
-Total: **44** templates.
+Total: **45** templates (+ `README.md` index).
 
 ---
 
@@ -226,7 +228,7 @@ Installed on demand by `/install-deps` (or manually). The studio's own agents
 | `vercel-labs/agent-skills` | `react-best-practices` | React-family specialists, `/code-review` |
 | `vercel-labs/agent-skills` | `composition-patterns` | `lead-frontend`, `ui-engineer` |
 | `vercel-labs/agent-skills` | `react-native-skills` | `mobile-specialist` |
-| `vercel-labs/agent-skills` | `deploy-to-vercel` | `edge-platform-specialist` |
+| `vercel-labs/agent-skills` | `deploy-to-vercel` | `hosting-platform-specialist` |
 | MCP: Playwright | browser automation | `test-engineer`, `/e2e`, `/a11y-audit`, `/perf-audit` |
 
 Every studio skill that names a dependency also works without it: it falls back
@@ -240,8 +242,8 @@ to its own checklist and says the dependency was not found.
 |---|---|---|
 | 1 | Foundation: blueprint, `CLAUDE.md`, README, LICENSE, `project.yaml`, core docs, settings, status line, `session-start` hook, `/start`, `/help`, plugin manifest | ✅ |
 | 2 | All 55 agents + `agent-roster.md` | ✅ |
-| 3 | Skills: onboarding, discovery, design | ⏳ |
-| 4 | Skills: build, audits, launch, grow, teams | ⏳ |
-| 5 | Hooks + helper scripts | ⏳ |
-| 6 | Rules + templates | ⏳ |
-| 7 | `studio-tests/`, CI workflow, plugin packaging, polish | ⏳ |
+| 3 | Skills: onboarding, discovery, design | ✅ |
+| 4 | Skills: build, audits, launch, grow, teams | ✅ |
+| 5 | Hooks + helper scripts | ✅ |
+| 6 | Rules + templates | ✅ |
+| 7 | `studio-tests/`, CI workflow, plugin packaging, polish | ✅ |
