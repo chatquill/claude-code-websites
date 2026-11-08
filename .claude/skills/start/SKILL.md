@@ -3,7 +3,7 @@ name: start
 description: "Guided onboarding for a new or returning user. Use when the user just cloned or installed the studio, has no idea or stack yet, asks where to begin, or wants to bring in an existing website."
 argument-hint: "[no arguments]"
 user-invocable: true
-allowed-tools: Read, Glob, Grep, AskUserQuestion, Bash(bash .claude/scripts/project-state.sh*), Bash(bash .claude/scripts/set-stage.sh *), Bash(bash .claude/scripts/config-set.sh *)
+allowed-tools: Read, Glob, Grep, AskUserQuestion, Bash(mkdir -p .claude/scripts*), Bash(cp *), Bash(bash .claude/scripts/project-state.sh*), Bash(bash .claude/scripts/set-stage.sh *), Bash(bash .claude/scripts/config-set.sh *)
 model: sonnet
 ---
 
@@ -22,6 +22,17 @@ helper scripts. It never writes the knobs rigor expands to (see
 Ask with the question tool. Without one, list numbered options and end the
 turn. The question is the last thing in the reply. A skipped or dismissed
 question is not an answer: ask again in plain text.
+
+## Phase 0: Plugin install check
+
+If `.claude/scripts/yaml-get.sh` does not exist, the studio was installed as a
+plugin into an existing repo and the helpers are not in the project yet. This
+skill's base directory is `<plugin>/.claude/skills/start/`, so the plugin's
+helpers are at `<plugin>/.claude/scripts/` and its config template at
+`<plugin>/project.yaml`. Say so, and ask: "May I copy the studio's helper
+scripts into `.claude/scripts/` and create `project.yaml`?" On yes, `mkdir -p
+.claude/scripts` and copy them (never overwrite an existing `project.yaml`).
+Without them, every skill still works but cannot read or save settings.
 
 ## Phase 1: Read the project
 
