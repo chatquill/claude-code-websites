@@ -21,7 +21,9 @@
 | Design system | `/design-system`, `/design-tokens` | `docs/design/design-system.md`, `tokens.json` |
 | Information architecture | `/sitemap`, `/content-strategy` | `docs/content/` |
 | Flows & screens | `/ux-flow`, `/wireframe`, `/ux-review` | `docs/design/ux/` |
-| Feature specs | `/feature-spec` (+ `/api-contract`, `/data-model`) | `docs/specs/features/` |
+| Client demo | `/client-demo` (`pitch` early, `review` once brand + flows exist, `feedback` after the client looks) | `docs/design/demo/<slug>/` |
+| **Early prototype** | `/working-prototype` → `/test-session` → `/working-prototype iterate` (repeat until the journeys feel right) | `prototypes/<slug>/`, `production/test-sessions/` |
+| Feature specs | `/feature-spec` (+ `/api-contract`, `/data-model`): written from what testing taught | `docs/specs/features/` |
 | Architecture | `/create-architecture`, `/architecture-decision`, `/architecture-review` | `docs/architecture/` |
 | **Gate** | `/gate-check design` | |
 
@@ -31,8 +33,9 @@
 | Break down | `/create-epics`, `/create-stories`, `/story-readiness` |
 | Plan | `/sprint-plan`, `/sprint-status` |
 | Implement | `/dev-story` (runs `/tdd` inside), `/team-feature` for full-stack slices |
+| Test by hand | `/test-session` on the vertical slice and at every milestone build |
 | Integrations | `/add-auth`, `/add-payments`, `/add-cms`, `/add-ai-feature`, `/add-realtime`, `/add-i18n`, `/db-migration` |
-| Review & close | `/code-review`, `/story-done` |
+| Review & close | `/review-code`, `/story-done` |
 | Keep healthy | `/tech-debt`, `/refactor`, `/regression-suite`, `/consistency-check` |
 | **Gate** | `/gate-check build` |
 
@@ -41,9 +44,25 @@
 |---|---|
 | Pipeline | `/ci-setup`, `/deploy-setup` |
 | Audits | `/perf-audit`, `/a11y-audit`, `/security-audit`, `/seo-audit`, `/privacy-audit`, `/dependency-audit` |
+| Acceptance | `/test-session run staging` (UAT) |
 | Ship | `/launch-checklist`, `/release-checklist`, `/smoke-check`, `/release-notes` |
 | Orchestrated | `/team-launch` |
 | **Gate** | `/gate-check launch` |
+
+### The manual testing loop (runs through every stage)
+
+Automated tests prove the code matches the spec; manual sessions prove the
+spec is right. Start early and keep going:
+
+```
+Design   /client-demo (look) ─► /working-prototype (works, fake data) ─► /test-session ─► iterate
+Build    /vertical-slice ─► /test-session ─► each milestone build ─► /test-session
+Launch   staging ─► /test-session (UAT) ─► /launch-checklist
+Grow     live product ─► /test-session with real users ─► /experiment
+```
+
+Findings are routed, never lost: bugs → `/bug-report`, flow or copy →
+UX/copy updates, spec or scope → `/propagate-design-change`.
 
 ### 5. Grow — *measure, learn, improve*
 | Area | Skill |

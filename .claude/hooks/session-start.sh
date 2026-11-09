@@ -2,7 +2,8 @@
 # SessionStart: print a short project briefing into the session context.
 # Output is advisory; this hook never blocks.
 cd "${CLAUDE_PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}" 2>/dev/null || exit 0
-get() { bash .claude/scripts/yaml-get.sh "$1" 2>/dev/null; }
+WS_SCRIPTS="$(cd "$(dirname "${BASH_SOURCE[0]}")/../scripts" && pwd)"
+get() { bash "$WS_SCRIPTS/yaml-get.sh" "$1" 2>/dev/null; }
 
 name=$(get project.name); stage=$(get project.stage); rigor=$(get modes.rigor)
 fe=$(get stack.frontend); be=$(get stack.backend); db=$(get stack.database); host=$(get stack.hosting)

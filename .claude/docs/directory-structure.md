@@ -26,9 +26,11 @@
 │   ├── releases/             # release checklists + notes
 │   ├── incidents/            # incident reports + postmortems
 │   ├── experiments/          # A/B experiment briefs + readouts
+│   ├── test-sessions/        # manual test sessions (plan, notes, findings)
 │   ├── audits/               # perf / a11y / security / seo / privacy reports
 │   ├── session-state/        # active.md (gitignored checkpoint)
 │   └── session-logs/         # gitignored audit trail
+├── prototypes/               # throwaway prototypes + early working prototype for manual testing
 ├── src/                      # Application code (scaffolded by /setup-stack)
 ├── tests/                    # Unit + integration tests (e2e/ for Playwright)
 └── studio-tests/             # Self-tests for the framework itself

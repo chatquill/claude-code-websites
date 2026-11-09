@@ -91,9 +91,9 @@ canonical list; `studio-tests` checks it against `.claude/agents/`.
 | Stage | Goal | Key outputs | Gate to next |
 |---|---|---|---|
 | **Discovery** | What are we building, for whom, why | `docs/product/brief.md`, personas, competitor scan, PRD | `/gate-check discovery` |
-| **Design** | How it looks, flows and is built | brand + design system, sitemap/IA, UX flows, feature specs, API contracts, data model, ADRs, architecture | `/gate-check design` |
-| **Build** | Ship features, test-first | epics, stories, code, tests, reviews | `/gate-check build` |
-| **Launch** | Production-ready and live | launch checklist, SEO, perf, a11y, security, privacy audits, deploy, smoke check | `/gate-check launch` |
+| **Design** | How it looks, flows and is built | brand + design system, sitemap/IA, UX flows, client demo, **working prototype + manual test sessions**, feature specs, API contracts, data model, ADRs, architecture | `/gate-check design` |
+| **Build** | Ship features, test-first | epics, stories, code, tests, reviews, manual test session per milestone | `/gate-check build` |
+| **Launch** | Production-ready and live | UAT test session, launch checklist, SEO, perf, a11y, security, privacy audits, deploy, smoke check | `/gate-check launch` |
 | **Grow** | Learn and improve | analytics, experiments, CRO, content, incidents, retros | (continuous) |
 
 `project.stage` in `project.yaml` records the current stage.
@@ -110,18 +110,18 @@ canonical list; `studio-tests` checks it against `.claude/agents/`.
 `/brainstorm` `/market-research` `/competitor-audit` `/personas` `/write-prd`
 `/scope-check` `/estimate` `/tech-spike`
 
-**Design (16)**
+**Design (18)**
 `/brand-identity` `/design-system` `/design-tokens` `/sitemap` `/ux-flow` `/wireframe`
 `/ux-review` `/feature-spec` `/api-contract` `/data-model` `/architecture-decision`
 `/create-architecture` `/architecture-review` `/content-strategy` `/design-review`
-`/propagate-design-change`
+`/propagate-design-change` `/client-demo` `/working-prototype`
 
-**Build (26)**
+**Build (27)**
 `/create-epics` `/create-stories` `/story-readiness` `/dev-story` `/story-done` `/tdd`
-`/prototype` `/vertical-slice` `/code-review` `/refactor` `/tech-debt` `/db-migration`
+`/prototype` `/vertical-slice` `/review-code` `/refactor` `/tech-debt` `/db-migration`
 `/add-auth` `/add-payments` `/add-cms` `/add-ai-feature` `/add-realtime` `/add-i18n`
 `/sprint-plan` `/sprint-status` `/test-setup` `/regression-suite` `/test-flakiness`
-`/e2e` `/consistency-check` `/team-feature`
+`/e2e` `/consistency-check` `/team-feature` `/test-session`
 
 **Quality audits (6)**
 `/perf-audit` `/a11y-audit` `/security-audit` `/dependency-audit` `/seo-audit` `/privacy-audit`
@@ -140,7 +140,7 @@ canonical list; `studio-tests` checks it against `.claude/agents/`.
 **Team orchestrations (7)**
 `/team-frontend` `/team-backend` `/team-design` `/team-qa` `/team-launch` `/team-growth` `/team-polish`
 
-Total: **97** skills.
+Total: **100** skills.
 
 ---
 
@@ -161,6 +161,8 @@ Total: **97** skills.
 | `dependency-audit.sh` | PostToolUse(Write/Edit) | Run `npm audit`/`pip-audit` when a manifest changes |
 | `validate-skill-change.sh` | PostToolUse(Write/Edit) | Remind to run `/skill-test` after editing a skill |
 | `log-agent.sh` / `log-agent-stop.sh` | SubagentStart/Stop | Agent audit trail |
+
+Shared helpers live in `hooks/lib.sh`. Behaviour is covered by `studio-tests/hooks.sh`.
 | `pre-compact.sh` | PreCompact | Flush state to `active.md` |
 | `session-stop.sh` | Stop | Session log + summary |
 | `notify.sh` | Notification | Desktop notification |
@@ -201,11 +203,11 @@ Product: `project-brief`, `persona`, `competitor-analysis`, `market-research`, `
 Design: `brand-guide`, `design-system`, `design-tokens.json`, `sitemap`, `ux-flow`, `wireframe-brief`, `ux-spec`, `content-strategy`
 Architecture: `feature-spec`, `api-contract` (OpenAPI 3.1), `data-model`, `adr`, `architecture`, `threat-model`
 Production: `epic`, `story`, `sprint-plan`, `milestone-review`, `retrospective`, `tech-debt-register`, `estimate`
-Quality: `test-plan`, `a11y-report`, `perf-report`, `security-review`, `seo-audit`, `privacy-dpia`, `bug-report`
+Quality: `test-plan`, `test-session`, `a11y-report`, `perf-report`, `security-review`, `seo-audit`, `privacy-dpia`, `bug-report`
 Launch: `launch-checklist`, `release-checklist`, `release-notes`, `runbook`, `changelog`
 Grow: `analytics-tracking-plan`, `experiment-brief`, `funnel-review`, `email-flow`, `incident-report`, `postmortem`, `content-calendar`
 
-Total: **44** templates.
+Total: **46** templates (+ `README.md` index).
 
 ---
 
@@ -223,10 +225,10 @@ Installed on demand by `/install-deps` (or manually). The studio's own agents
 | `anthropics/skills` | `mcp-builder` | `ai-features-engineer` |
 | `anthropics/skills` | `claude-api` | `ai-features-engineer`, `/add-ai-feature` |
 | `vercel-labs/agent-skills` | `web-design-guidelines` | `ux-lead`, `/ux-review`, `/a11y-audit` |
-| `vercel-labs/agent-skills` | `react-best-practices` | React-family specialists, `/code-review` |
+| `vercel-labs/agent-skills` | `react-best-practices` | React-family specialists, `/review-code` |
 | `vercel-labs/agent-skills` | `composition-patterns` | `lead-frontend`, `ui-engineer` |
 | `vercel-labs/agent-skills` | `react-native-skills` | `mobile-specialist` |
-| `vercel-labs/agent-skills` | `deploy-to-vercel` | `edge-platform-specialist` |
+| `vercel-labs/agent-skills` | `deploy-to-vercel` | `hosting-platform-specialist` |
 | MCP: Playwright | browser automation | `test-engineer`, `/e2e`, `/a11y-audit`, `/perf-audit` |
 
 Every studio skill that names a dependency also works without it: it falls back
@@ -239,9 +241,9 @@ to its own checklist and says the dependency was not found.
 | Phase | Contents | Status |
 |---|---|---|
 | 1 | Foundation: blueprint, `CLAUDE.md`, README, LICENSE, `project.yaml`, core docs, settings, status line, `session-start` hook, `/start`, `/help`, plugin manifest | ✅ |
-| 2 | All 50 agents + `agent-roster.md` | ⏳ |
-| 3 | Skills: onboarding, discovery, design | ⏳ |
-| 4 | Skills: build, audits, launch, grow, teams | ⏳ |
-| 5 | Hooks + helper scripts | ⏳ |
-| 6 | Rules + templates | ⏳ |
-| 7 | `studio-tests/`, CI workflow, plugin packaging, polish | ⏳ |
+| 2 | All 55 agents + `agent-roster.md` | ✅ |
+| 3 | Skills: onboarding, discovery, design | ✅ |
+| 4 | Skills: build, audits, launch, grow, teams | ✅ |
+| 5 | Hooks + helper scripts | ✅ |
+| 6 | Rules + templates | ✅ |
+| 7 | `studio-tests/`, CI workflow, plugin packaging, polish | ✅ |
