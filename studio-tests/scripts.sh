@@ -51,7 +51,7 @@ st="$(bash $S/project-state.sh)"
 eq "$(printf '%s\n' "$st" | sed -n 's/^working_prototypes: //p')" "1" "project-state counts working prototypes"
 eq "$(printf '%s\n' "$st" | sed -n 's/^test_sessions: //p')" "1" "project-state counts test sessions"
 # project-state + detect-stack
-bash $S/project-state.sh | grep -q '^stage: build' && pass=$((pass+1)) || { fail=$((fail+1)); echo "FAIL project-state stage"; }
+ps_out="$(bash $S/project-state.sh)"; printf '%s\n' "$ps_out" | grep -q '^stage: build' && pass=$((pass+1)) || { fail=$((fail+1)); echo "FAIL project-state stage"; }
 echo '{"dependencies":{"nuxt":"3","drizzle-orm":"1","postgres":"3"},"devDependencies":{"vitest":"1"}}' > package.json; touch pnpm-lock.yaml
 out="$(bash $S/detect-stack.sh)"
 for k in "frontend: nuxt" "orm: drizzle" "database: postgres" "package_manager: pnpm" "test_unit: vitest"; do
@@ -60,6 +60,8 @@ done
 # test-run with no runner
 eq "$(bash $S/test-run.sh | sed -n 's/^result: //p')" "no-runner" "test-run without tests"
 # test-run: missing runner is not a test failure
+# (pin npm: an earlier step left a pnpm lockfile, and CI runners have no pnpm)
+rm -f pnpm-lock.yaml; bash $S/config-set.sh stack.package_manager=npm >/dev/null
 echo '{"scripts":{"test":"definitely-not-installed-runner run"}}' > package.json
 eq "$(bash $S/test-run.sh | sed -n 's/^result: //p')" "runner-missing" "test-run missing runner"
 echo '{"scripts":{"test":"node -e \"process.exit(1)\""}}' > package.json
