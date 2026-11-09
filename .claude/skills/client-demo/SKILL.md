@@ -127,5 +127,5 @@ feedback flow into the brand guide, UX flows, specs or PRD.
 
 ## Next step
 
-After sign-off: `/design-system` and `/feature-spec` (the demo is a reference,
+After sign-off: `/working-prototype` to test the journeys by hand, then `/design-system` and `/feature-spec` (the demo is a reference,
 not code to reuse; production UI is built through `/dev-story`).

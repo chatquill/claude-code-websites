@@ -66,6 +66,8 @@ Signers: **`PD-GATE` (primary)**; `TD-GATE` under `full` (feasibility of the PRD
 | `docs/design/ux/*.md` for key journeys (not `api`) | — | signup/onboarding + core task | every MVP journey |
 | `docs/content/sitemap.md` (not `api`) | — | required for `marketing`/`ecommerce` | required |
 | Threat model (`docs/architecture/threat-model.md` or per-spec section) | — | for auth/payments/uploads | required |
+| Working prototype of the core journeys (`prototypes/*/README.md` with `Type: working-prototype`; `api` projects: contract mock server) | recommended | required | required, ≥ 1 `iterate` round |
+| Manual test session on the prototype (`production/test-sessions/*.md`) with every S1/S2 finding routed | recommended | ≥ 1 | ≥ 2 sessions, ≥ 3 testers |
 
 Criteria:
 - Every PRD MVP requirement maps to a feature spec (traceability).
@@ -85,6 +87,7 @@ Signers: **`TD-GATE` (primary)**, **`DD-GATE` (primary, skipped for `api`)**; `P
 | CI pipeline in repo (`.github/workflows/` or host CI) | — | required | required |
 | `production/tech-debt.md` reviewed (no `blocker` items) | — | required | required |
 | `/consistency-check` report with no open contradictions | — | optional | required |
+| Manual test session on a preview/staging build covering the critical journeys, no open S1 findings | — | required | required (UAT, signed by `qa-lead` + `product-director`) |
 
 Criteria:
 - No skipped/disabled tests without a linked bug.

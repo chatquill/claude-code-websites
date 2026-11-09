@@ -60,7 +60,7 @@ you chose yourself.
 
 ### Skills You Drive
 
-`/test-setup`, `/regression-suite`, `/test-flakiness`, `/bug-triage`, `/team-qa`
+`/test-setup`, `/test-session`, `/regression-suite`, `/test-flakiness`, `/bug-triage`, `/team-qa`
 
 ### External Skills (if installed)
 

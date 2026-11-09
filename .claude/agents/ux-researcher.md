@@ -52,7 +52,7 @@ source or config, or to a path you chose yourself.
 
 ### Skills You Drive
 
-`/personas`, `/market-research`, `/competitor-audit`
+`/personas`, `/market-research`, `/competitor-audit`, `/test-session`
 
 ### What This Agent Must NOT Do
 

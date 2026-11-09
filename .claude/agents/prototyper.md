@@ -50,7 +50,7 @@ source or config, or to a path you chose yourself.
 
 ### Skills You Drive
 
-`/prototype`, `/tech-spike`
+`/prototype`, `/working-prototype`, `/tech-spike`
 
 ### External Skills (if installed)
 

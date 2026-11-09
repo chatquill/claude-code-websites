@@ -107,6 +107,14 @@ expect 0 validate-push.sh "$(b 'git push -u origin feat/x')" "missing runner adv
 rm package.json
 bash .claude/scripts/config-set.sh modes.rigor=minimal >/dev/null
 
+# detect-gaps flags a missing prototype/test session in build (standard rigor)
+bash .claude/scripts/config-set.sh modes.rigor=standard >/dev/null
+bash .claude/scripts/set-stage.sh build >/dev/null
+expect 0 detect-gaps.sh '{}' "build stage without prototype is flagged" "working prototype"
+mkdir -p prototypes/p production/test-sessions && printf 'Type: working-prototype\n' > prototypes/p/README.md && touch production/test-sessions/s.md
+out="$(printf '{}' | bash .claude/hooks/detect-gaps.sh)"; printf '%s' "$out" | grep -q "working prototype\|test session" && { fail=$((fail+1)); echo "FAIL detect-gaps still flags prototype"; } || pass=$((pass+1))
+bash .claude/scripts/config-set.sh modes.rigor=minimal >/dev/null
+
 # lifecycle hooks never fail
 for h in session-start.sh detect-gaps.sh pre-compact.sh session-stop.sh log-agent.sh log-agent-stop.sh notify.sh; do
   expect 0 "$h" '{"session_id":"abc","agent_type":"ui-engineer","message":"hi"}' "$h exits 0"

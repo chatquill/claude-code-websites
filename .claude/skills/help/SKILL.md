@@ -34,6 +34,8 @@ Read-only. It never writes files and never runs the skill it suggests.
 | | `brand_guide: no` (not `api` type) | `/brand-identity` |
 | | `design_system: no` (not `api` type) | `/design-system` |
 | | `ux_docs: 0` (not `api` type) | `/ux-flow` |
+| | `working_prototypes: 0` and rigor ≠ minimal | `/working-prototype` (early build to test by hand) |
+| | `test_sessions: 0` and a prototype exists | `/test-session plan <slug>` |
 | | `feature_specs: 0` | `/feature-spec` |
 | | `architecture: no` | `/create-architecture` |
 | | all present | `/gate-check design` |

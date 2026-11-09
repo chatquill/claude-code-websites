@@ -42,6 +42,14 @@ eq "$(bash $S/next-number.sh production/tech-debt.md TD)" "TD-12" "next ID insid
 printf '# S-009: Login\nStatus: ready\nEstimate: 3 pts\n' > production/stories/E-01/S-009-login.md
 eq "$(bash $S/story-list.sh ready)" "S-009|ready|3 pts|production/stories/E-01/S-009-login.md" "story-list filter"
 eq "$(bash $S/story-list.sh done)" "" "story-list empty filter"
+# project-state: working prototype + test sessions
+mkdir -p prototypes/booking production/test-sessions
+printf '# Booking prototype\nType: working-prototype\n' > prototypes/booking/README.md
+printf '# spike\n' > prototypes/README.md
+touch production/test-sessions/2026-11-09-booking.md
+st="$(bash $S/project-state.sh)"
+eq "$(printf '%s\n' "$st" | sed -n 's/^working_prototypes: //p')" "1" "project-state counts working prototypes"
+eq "$(printf '%s\n' "$st" | sed -n 's/^test_sessions: //p')" "1" "project-state counts test sessions"
 # project-state + detect-stack
 bash $S/project-state.sh | grep -q '^stage: build' && pass=$((pass+1)) || { fail=$((fail+1)); echo "FAIL project-state stage"; }
 echo '{"dependencies":{"nuxt":"3","drizzle-orm":"1","postgres":"3"},"devDependencies":{"vitest":"1"}}' > package.json; touch pnpm-lock.yaml

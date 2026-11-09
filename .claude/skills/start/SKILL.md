@@ -101,7 +101,7 @@ value and `set-stage.sh <stage>`.
 | D | `/adopt` | Detects the stack, writes `project.yaml`, maps what exists |
 
 Then show the road ahead in one line:
-**Discovery → Design (`/setup-stack`, `/design-system`, `/feature-spec`) →
+**Discovery → Design (`/setup-stack`, `/design-system`, `/working-prototype` + `/test-session`, `/feature-spec`) →
 Build (`/dev-story`) → Launch (`/launch-checklist`) → Grow.**
 
 Mention `/install-deps` once (optional design + testing skills) and that

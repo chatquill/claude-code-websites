@@ -91,9 +91,9 @@ canonical list; `studio-tests` checks it against `.claude/agents/`.
 | Stage | Goal | Key outputs | Gate to next |
 |---|---|---|---|
 | **Discovery** | What are we building, for whom, why | `docs/product/brief.md`, personas, competitor scan, PRD | `/gate-check discovery` |
-| **Design** | How it looks, flows and is built | brand + design system, sitemap/IA, UX flows, feature specs, API contracts, data model, ADRs, architecture | `/gate-check design` |
-| **Build** | Ship features, test-first | epics, stories, code, tests, reviews | `/gate-check build` |
-| **Launch** | Production-ready and live | launch checklist, SEO, perf, a11y, security, privacy audits, deploy, smoke check | `/gate-check launch` |
+| **Design** | How it looks, flows and is built | brand + design system, sitemap/IA, UX flows, client demo, **working prototype + manual test sessions**, feature specs, API contracts, data model, ADRs, architecture | `/gate-check design` |
+| **Build** | Ship features, test-first | epics, stories, code, tests, reviews, manual test session per milestone | `/gate-check build` |
+| **Launch** | Production-ready and live | UAT test session, launch checklist, SEO, perf, a11y, security, privacy audits, deploy, smoke check | `/gate-check launch` |
 | **Grow** | Learn and improve | analytics, experiments, CRO, content, incidents, retros | (continuous) |
 
 `project.stage` in `project.yaml` records the current stage.
@@ -110,18 +110,18 @@ canonical list; `studio-tests` checks it against `.claude/agents/`.
 `/brainstorm` `/market-research` `/competitor-audit` `/personas` `/write-prd`
 `/scope-check` `/estimate` `/tech-spike`
 
-**Design (17)**
+**Design (18)**
 `/brand-identity` `/design-system` `/design-tokens` `/sitemap` `/ux-flow` `/wireframe`
 `/ux-review` `/feature-spec` `/api-contract` `/data-model` `/architecture-decision`
 `/create-architecture` `/architecture-review` `/content-strategy` `/design-review`
-`/propagate-design-change` `/client-demo`
+`/propagate-design-change` `/client-demo` `/working-prototype`
 
-**Build (26)**
+**Build (27)**
 `/create-epics` `/create-stories` `/story-readiness` `/dev-story` `/story-done` `/tdd`
 `/prototype` `/vertical-slice` `/review-code` `/refactor` `/tech-debt` `/db-migration`
 `/add-auth` `/add-payments` `/add-cms` `/add-ai-feature` `/add-realtime` `/add-i18n`
 `/sprint-plan` `/sprint-status` `/test-setup` `/regression-suite` `/test-flakiness`
-`/e2e` `/consistency-check` `/team-feature`
+`/e2e` `/consistency-check` `/team-feature` `/test-session`
 
 **Quality audits (6)**
 `/perf-audit` `/a11y-audit` `/security-audit` `/dependency-audit` `/seo-audit` `/privacy-audit`
@@ -140,7 +140,7 @@ canonical list; `studio-tests` checks it against `.claude/agents/`.
 **Team orchestrations (7)**
 `/team-frontend` `/team-backend` `/team-design` `/team-qa` `/team-launch` `/team-growth` `/team-polish`
 
-Total: **98** skills.
+Total: **100** skills.
 
 ---
 
@@ -203,11 +203,11 @@ Product: `project-brief`, `persona`, `competitor-analysis`, `market-research`, `
 Design: `brand-guide`, `design-system`, `design-tokens.json`, `sitemap`, `ux-flow`, `wireframe-brief`, `ux-spec`, `content-strategy`
 Architecture: `feature-spec`, `api-contract` (OpenAPI 3.1), `data-model`, `adr`, `architecture`, `threat-model`
 Production: `epic`, `story`, `sprint-plan`, `milestone-review`, `retrospective`, `tech-debt-register`, `estimate`
-Quality: `test-plan`, `a11y-report`, `perf-report`, `security-review`, `seo-audit`, `privacy-dpia`, `bug-report`
+Quality: `test-plan`, `test-session`, `a11y-report`, `perf-report`, `security-review`, `seo-audit`, `privacy-dpia`, `bug-report`
 Launch: `launch-checklist`, `release-checklist`, `release-notes`, `runbook`, `changelog`
 Grow: `analytics-tracking-plan`, `experiment-brief`, `funnel-review`, `email-flow`, `incident-report`, `postmortem`, `content-calendar`
 
-Total: **45** templates (+ `README.md` index).
+Total: **46** templates (+ `README.md` index).
 
 ---
 

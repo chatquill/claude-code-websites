@@ -87,6 +87,8 @@ Keep skills under ~150 lines. Point to templates and docs instead of inlining th
 | Retro | `production/retros/YYYY-MM-DD.md` |
 | Prototype | `prototypes/<slug>/` (+ `README.md` with the finding) |
 | Audit report (other types) | `production/audits/<type>[-<slug>]-YYYY-MM-DD.md` — also `ux-review`, `design-review`, `architecture-review`, `consistency`, `cro`, `polish`, `perf-load` |
+| Working prototype | `prototypes/<slug>/` with `README.md` containing `Type: working-prototype` and a version log |
+| Test session | `production/test-sessions/YYYY-MM-DD-<slug>.md` (plan, live notes, findings in one file) |
 | Client demo | `docs/design/demo/<slug>/` (static clickable prototype + `notes.md`, `feedback.md`) |
 | Wireframes | `docs/design/ux/<slug>-wireframes.md`; HTML mockups in `docs/design/ux/<slug>/` |
 | GraphQL schema | `docs/architecture/api/schema.graphql` |

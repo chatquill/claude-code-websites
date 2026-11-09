@@ -5,6 +5,9 @@ All notable changes to Claude Code Web Studios. Format: [Keep a Changelog](https
 ## [0.1.0] - 2026-11-08
 
 ### Added
+- `/working-prototype`: early runnable prototype of the core journeys (mocked backend, seeded resettable data, role/scenario/network toolbar) built in the Design stage for manual testing
+- `/test-session`: plan → run → report manual testing loop with routed findings; used on the prototype, vertical slice, every milestone and as UAT; `test-session` template
+- Gates require a tested working prototype (design → build) and a manual session on the build (build → launch) under `standard`/`full`; `/help`, `project-state.sh` and `detect-gaps.sh` track them
 - `/client-demo`: Figma-style, high-fidelity clickable demo (hotspots, device and state toggles, feature tour, presenter notes, feedback loop) as a static site for clients
 
 ### Changed (after a dry run on a fresh create-next-app project, and running the hooks live)

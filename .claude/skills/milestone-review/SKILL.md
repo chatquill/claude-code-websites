@@ -28,7 +28,10 @@ If no slug is given, list milestones and ask which.
 
 Compute: stories planned vs done vs carried over, points planned vs delivered,
 bugs opened/closed by severity, audits run and open Critical/High findings,
-dates planned vs actual. Show them as a table before any judgement.
+the milestone's manual test session (`production/test-sessions/`: task success
+rates, open S1/S2 findings), dates planned vs actual. Under `standard`/`full`, a
+milestone without a test session on its build is `NOT ASSESSED` until
+`/test-session` runs. Show them as a table before any judgement.
 
 ### Phase 2: Exit criterion
 

@@ -16,7 +16,11 @@ case "$stage" in
     [ -z "$(cfg stack.frontend)$(cfg stack.backend)" ] && gap "stack not configured: /setup-stack"
     nonempty docs/specs/features "feature specs: /feature-spec"
     need docs/architecture/architecture.md "architecture: /create-architecture"
-    if [ "$type" != api ]; then need docs/design/design-system.md "design system: /design-system"; fi ;;
+    if [ "$type" != api ]; then need docs/design/design-system.md "design system: /design-system"; fi
+    if [ "$RIGOR" != minimal ]; then
+      grep -qsE '^Type:[[:space:]]*working-prototype' prototypes/*/README.md || gap "no working prototype tested by hand: /working-prototype"
+      nonempty production/test-sessions "no manual test session yet: /test-session"
+    fi ;;
 esac
 case "$stage" in
   build|launch|grow)
