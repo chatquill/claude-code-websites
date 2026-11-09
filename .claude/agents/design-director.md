@@ -61,7 +61,7 @@ gate requires is a finding, not a missing input.
 
 ### Skills You Drive
 
-`/brand-identity`, `/design-system`, `/design-tokens`, `/design-review`
+`/brand-identity`, `/design-system`, `/design-tokens`, `/design-review`, `/client-demo`
 
 ### External Skills (if installed)
 

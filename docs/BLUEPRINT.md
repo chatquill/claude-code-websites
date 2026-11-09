@@ -110,11 +110,11 @@ canonical list; `studio-tests` checks it against `.claude/agents/`.
 `/brainstorm` `/market-research` `/competitor-audit` `/personas` `/write-prd`
 `/scope-check` `/estimate` `/tech-spike`
 
-**Design (16)**
+**Design (17)**
 `/brand-identity` `/design-system` `/design-tokens` `/sitemap` `/ux-flow` `/wireframe`
 `/ux-review` `/feature-spec` `/api-contract` `/data-model` `/architecture-decision`
 `/create-architecture` `/architecture-review` `/content-strategy` `/design-review`
-`/propagate-design-change`
+`/propagate-design-change` `/client-demo`
 
 **Build (26)**
 `/create-epics` `/create-stories` `/story-readiness` `/dev-story` `/story-done` `/tdd`
@@ -140,7 +140,7 @@ canonical list; `studio-tests` checks it against `.claude/agents/`.
 **Team orchestrations (7)**
 `/team-frontend` `/team-backend` `/team-design` `/team-qa` `/team-launch` `/team-growth` `/team-polish`
 
-Total: **97** skills.
+Total: **98** skills.
 
 ---
 

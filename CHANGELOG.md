@@ -4,6 +4,9 @@ All notable changes to Claude Code Web Studios. Format: [Keep a Changelog](https
 
 ## [0.1.0] - 2026-11-08
 
+### Added
+- `/client-demo`: Figma-style, high-fidelity clickable demo (hotspots, device and state toggles, feature tour, presenter notes, feedback loop) as a static site for clients
+
 ### Changed (after a dry run on a fresh create-next-app project, and running the hooks live)
 - `/code-review` renamed to `/review-code` to avoid clashing with Claude Code's built-in skill
 - `test-run.sh` distinguishes `runner-missing` and `runner-error` (broken test setup) from failing tests; the push gate advises on a missing runner and blocks a broken one only under `full`

@@ -21,6 +21,7 @@
 | Design system | `/design-system`, `/design-tokens` | `docs/design/design-system.md`, `tokens.json` |
 | Information architecture | `/sitemap`, `/content-strategy` | `docs/content/` |
 | Flows & screens | `/ux-flow`, `/wireframe`, `/ux-review` | `docs/design/ux/` |
+| Client demo | `/client-demo` (`pitch` early, `review` once brand + flows exist, `feedback` after the client looks) | `docs/design/demo/<slug>/` |
 | Feature specs | `/feature-spec` (+ `/api-contract`, `/data-model`) | `docs/specs/features/` |
 | Architecture | `/create-architecture`, `/architecture-decision`, `/architecture-review` | `docs/architecture/` |
 | **Gate** | `/gate-check design` | |

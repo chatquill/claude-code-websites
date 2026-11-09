@@ -5,14 +5,14 @@
     <br />
     Frontend + backend. Discovery to growth. You make the calls.
     <br />
-    55 agents · 97 skills · 17 hooks · 18 rules · 45 templates
+    55 agents · 98 skills · 17 hooks · 18 rules · 45 templates
   </p>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
   <a href=".claude/agents"><img src="https://img.shields.io/badge/agents-55-blueviolet" alt="55 agents"></a>
-  <a href=".claude/skills"><img src="https://img.shields.io/badge/skills-97-green" alt="97 skills"></a>
+  <a href=".claude/skills"><img src="https://img.shields.io/badge/skills-98-green" alt="98 skills"></a>
   <a href=".claude/hooks"><img src="https://img.shields.io/badge/hooks-17-orange" alt="17 hooks"></a>
   <a href=".claude/rules"><img src="https://img.shields.io/badge/rules-18-red" alt="18 rules"></a>
   <a href="https://code.claude.com/docs"><img src="https://img.shields.io/badge/built%20for-Claude%20Code-f5f5f5" alt="Built for Claude Code"></a>
@@ -55,7 +55,7 @@ work, and catches the mistakes.
 | Category | Count | Where |
 |---|---|---|
 | Agents | 55 | [`.claude/agents/`](.claude/agents): roster in [`agent-roster.md`](.claude/docs/agent-roster.md) |
-| Skills (slash commands) | 97 | [`.claude/skills/`](.claude/skills): conventions in [`skill-conventions.md`](.claude/docs/skill-conventions.md) |
+| Skills (slash commands) | 98 | [`.claude/skills/`](.claude/skills): conventions in [`skill-conventions.md`](.claude/docs/skill-conventions.md) |
 | Hooks | 17 | [`.claude/hooks/`](.claude/hooks): see [`hooks-reference.md`](.claude/docs/hooks-reference.md) |
 | Path-scoped rules | 18 | [`.claude/rules/`](.claude/rules) |
 | Templates | 45 | [`.claude/docs/templates/`](.claude/docs/templates) |
@@ -95,7 +95,7 @@ stages. Full guide: [`docs/WORKFLOW-GUIDE.md`](docs/WORKFLOW-GUIDE.md).
 |---|---|
 | **Start** | `/start` · `/help` · `/adopt` (existing site) · `/setup-stack` · `/settings` · `/install-deps` |
 | **Discovery** | `/brainstorm` · `/market-research` · `/competitor-audit` · `/personas` · `/write-prd` · `/scope-check` · `/estimate` · `/tech-spike` |
-| **Design** | `/brand-identity` · `/design-system` · `/design-tokens` · `/sitemap` · `/ux-flow` · `/wireframe` · `/ux-review` · `/feature-spec` · `/api-contract` · `/data-model` · `/create-architecture` · `/architecture-decision` · `/architecture-review` · `/content-strategy` · `/design-review` |
+| **Design** | `/brand-identity` · `/design-system` · `/design-tokens` · `/sitemap` · `/ux-flow` · `/wireframe` · `/ux-review` · `/feature-spec` · `/api-contract` · `/data-model` · `/create-architecture` · `/architecture-decision` · `/architecture-review` · `/content-strategy` · `/design-review` · `/client-demo` (clickable, Figma-style client demo) |
 | **Build** | `/create-epics` · `/create-stories` · `/sprint-plan` · `/dev-story` · `/tdd` · `/review-code` · `/story-done` · `/team-feature` · `/add-auth` · `/add-payments` · `/add-cms` · `/add-ai-feature` · `/add-realtime` · `/add-i18n` · `/db-migration` · `/test-setup` · `/e2e` |
 | **Audits** | `/perf-audit` · `/a11y-audit` · `/security-audit` · `/dependency-audit` · `/seo-audit` · `/privacy-audit` |
 | **Launch** | `/ci-setup` · `/deploy-setup` · `/team-launch` · `/launch-checklist` · `/release-checklist` · `/smoke-check` · `/load-test` · `/changelog` · `/release-notes` |

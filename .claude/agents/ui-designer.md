@@ -55,7 +55,7 @@ source or config, or to a path you chose yourself.
 
 ### Skills You Drive
 
-`/brand-identity`, `/design-system`, `/design-tokens`, `/wireframe`
+`/brand-identity`, `/design-system`, `/design-tokens`, `/wireframe`, `/client-demo`
 
 ### External Skills (if installed)
 
